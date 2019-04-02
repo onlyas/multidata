@@ -1,12 +1,13 @@
 package com.onlyas.multidata;
 
+import com.github.pagehelper.autoconfigure.PageHelperAutoConfiguration;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationBeanNameGenerator;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = PageHelperAutoConfiguration.class)
 @ComponentScan(nameGenerator = MultidataApplication.SpringBeanNameGenerator.class)
 public class MultidataApplication {
 
