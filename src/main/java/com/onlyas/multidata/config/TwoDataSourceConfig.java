@@ -14,7 +14,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages="com.onlyas.multidata.dao.two", sqlSessionFactoryRef = "twoSqlSessionFactory",nameGenerator = MultidataApplication.SpringBeanNameGenerator.class)
+@MapperScan(basePackages = "com.onlyas.multidata.dao.two", sqlSessionFactoryRef = "twoSqlSessionFactory", nameGenerator = MultidataApplication.SpringBeanNameGenerator.class)
 public class TwoDataSourceConfig {
     @Autowired
     @Qualifier("dataSourceTwo")
@@ -26,8 +26,7 @@ public class TwoDataSourceConfig {
     }
 
     @Bean(name = "twoSqlSessionFactory")
-    public SqlSessionFactory twoSqlSessionFactory(@Qualifier("dataSourceTwo") DataSource dataSourceTwo)
-            throws Exception {
+    public SqlSessionFactory twoSqlSessionFactory() throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSourceTwo);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:com/onlyas/multidata/dao/two/*.xml"));

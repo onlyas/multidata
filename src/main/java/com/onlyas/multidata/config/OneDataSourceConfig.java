@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages="com.onlyas.multidata.dao.one", sqlSessionFactoryRef = "oneSqlSessionFactory",nameGenerator = MultidataApplication.SpringBeanNameGenerator.class)
+@MapperScan(basePackages = "com.onlyas.multidata.dao.one", sqlSessionFactoryRef = "oneSqlSessionFactory", nameGenerator = MultidataApplication.SpringBeanNameGenerator.class)
 public class OneDataSourceConfig {
 
     @Autowired
@@ -30,8 +30,7 @@ public class OneDataSourceConfig {
 
     @Bean(name = "oneSqlSessionFactory")
     @Primary
-    public SqlSessionFactory oneSqlSessionFactory(@Qualifier("dataSourceOne") DataSource dataSourceOne)
-            throws Exception {
+    public SqlSessionFactory oneSqlSessionFactory() throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSourceOne);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:com/onlyas/multidata/dao/one/*.xml"));
