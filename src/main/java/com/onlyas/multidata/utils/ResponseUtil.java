@@ -7,8 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 public class ResponseUtil {
+
     public static Object ok() {
-        Map<String, Object> obj = new HashMap<String, Object>();
+        Map<String, Object> obj = new HashMap<>();
         obj.put("code", 200);
         obj.put("msg", "ok");
         return obj;
@@ -19,7 +20,7 @@ public class ResponseUtil {
     }
 
     public static Object ok(String msg, Object data) {
-        Map<String, Object> obj = new HashMap<String, Object>();
+        Map<String, Object> obj = new HashMap<>();
         obj.put("code", 200);
         obj.put("msg", msg);
         obj.put("data", data);
@@ -38,7 +39,7 @@ public class ResponseUtil {
         result.put("total", pageInfo.getTotal());
         result.put("pageNum", pageInfo.getPageNum());
         result.put("list", pageInfo.getList());
-        Map<String, Object> obj = new HashMap<String, Object>();
+        Map<String, Object> obj = new HashMap<>();
         obj.put("code", 200);
         obj.put("msg", msg);
         obj.put("data", result);
@@ -46,14 +47,14 @@ public class ResponseUtil {
     }
 
     public static Object fail() {
-        Map<String, Object> obj = new HashMap<String, Object>();
+        Map<String, Object> obj = new HashMap<>();
         obj.put("code", 0);
         obj.put("msg", "ERROR");
         return obj;
     }
 
     public static Object fail(int code, String msg) {
-        Map<String, Object> obj = new HashMap<String, Object>();
+        Map<String, Object> obj = new HashMap<>();
         obj.put("code", code);
         obj.put("msg", msg);
         return obj;

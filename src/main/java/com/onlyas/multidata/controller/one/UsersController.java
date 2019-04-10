@@ -1,14 +1,11 @@
 package com.onlyas.multidata.controller.one;
 
-import com.github.pagehelper.PageInfo;
-import com.onlyas.multidata.domain.one.TUsers;
 import com.onlyas.multidata.service.one.TUsersService;
+import com.onlyas.multidata.utils.OK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 
 @RestController
@@ -19,12 +16,12 @@ public class UsersController {
     TUsersService tUsersService;
 
     @GetMapping("/list")
-    public List<TUsers> list() {
-        return tUsersService.list();
+    public OK list() {
+        return new OK(tUsersService.list());
     }
 
     @GetMapping("/page")
-    public PageInfo<TUsers> page() {
-        return tUsersService.page();
+    public OK page() {
+        return new OK(tUsersService.page());
     }
 }
