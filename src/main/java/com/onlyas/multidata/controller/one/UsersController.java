@@ -17,6 +17,7 @@ public class UsersController {
 
     @GetMapping("/list")
     public OK list() {
+        //return new OK(0,"找不到用户信息");
         return new OK(tUsersService.list());
     }
 
