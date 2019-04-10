@@ -39,16 +39,6 @@ public class GeneratorStartUp {
             String driver = jdbcConnectionConfiguration.getDriverClass();
             JDBCConnectionFactory jdbcConnectionFactory = new JDBCConnectionFactory(jdbcConnectionConfiguration);
             if (driver.equals("com.microsoft.sqlserver.jdbc.SQLServerDriver")) {
-                /*
-                String url = jdbcConnectionConfiguration.getConnectionURL();
-                String user = jdbcConnectionConfiguration.getUserId();
-                String pwd = jdbcConnectionConfiguration.getPassword();
-                Connection conn = getConnection(driver, url, user, pwd);
-                if (null == conn) {
-                    System.out.println("数据库连接失败-" + url);
-                    continue;
-                }
-                */
                 Connection conn = jdbcConnectionFactory.getConnection();
                 QueryRunner qr = new QueryRunner();
                 //Tables
@@ -103,25 +93,4 @@ public class GeneratorStartUp {
         }
     }
 
-    /*
-    private static Connection getConnection(String driver, String url, String user, String password) {
-        Connection conn = null;
-        try {
-            Class.forName(driver);
-            //conn = DriverManager.getConnection(url, user, password);
-            Properties props = new Properties();
-            props.setProperty("user", user);
-            props.setProperty("password", password);
-            //#mysql
-            //props.setProperty("remarks", "true"); //设置可以获取remarks信息
-            //props.setProperty("useInformationSchema", "true");//设置可以获取tables remarks信息
-            //#oracle
-            //props.setProperty("remarks", "true");
-            //props.setProperty("remarksReporting", "true");
-            conn = DriverManager.getConnection(url, props);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return conn;
-    }*/
 }
