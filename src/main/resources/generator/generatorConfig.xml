@@ -7,7 +7,7 @@
 
     <context id="testGenerator" targetRuntime="MyBatis3">
         <property name="autoDelimitKeywords" value="true"/>
-        <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
+        <!--MySQL可以使用``包括字段名，SQLServer可以用[]包括字段名-->
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
@@ -57,7 +57,7 @@
 
     <context id="secondGenerator" targetRuntime="MyBatis3">
         <property name="autoDelimitKeywords" value="true"/>
-        <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
+        <!--MySQL可以使用``包括字段名，SQLServer可以用[]包括字段名-->
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
