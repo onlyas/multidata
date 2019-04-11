@@ -9,8 +9,6 @@ import java.util.List;
 
 /**
  * @Auther: Danny
- * @Date: 2018/12/29 17:36
- * @Description:
  */
 @Slf4j
 public class BeanUtil {
@@ -30,7 +28,6 @@ public class BeanUtil {
             log.error("BeanUtil.copyProperties error", e);
         } catch (IllegalAccessException e) {
             log.error("BeanUtil.copyProperties error", e);
-            log.error("",e);
         }
         return newObject;
     }
@@ -45,7 +42,6 @@ public class BeanUtil {
             log.error("BeanUtil.copyProperties error", e);
         } catch (IllegalAccessException e) {
             log.error("BeanUtil.copyProperties error", e);
-            log.error("",e);
         }
         return newObject;
     }
