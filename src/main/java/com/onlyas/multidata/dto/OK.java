@@ -1,7 +1,8 @@
-package com.onlyas.multidata.utils;
+package com.onlyas.multidata.dto;
 
-import lombok.*;
-import lombok.experimental.Accessors;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
@@ -11,9 +12,6 @@ import java.io.Serializable;
  * @param <T>
  * @author Danny
  */
-@Builder
-@ToString
-@Accessors(chain = true)
 @AllArgsConstructor
 public class OK<T> implements Serializable {
     private static final long serialVersionUID = 1L;

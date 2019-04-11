@@ -1,7 +1,7 @@
 package com.onlyas.multidata.controller.one;
 
 import com.onlyas.multidata.service.one.TUsersService;
-import com.onlyas.multidata.utils.OK;
+import com.onlyas.multidata.dto.OK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
