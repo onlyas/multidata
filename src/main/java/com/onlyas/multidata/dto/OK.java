@@ -1,6 +1,5 @@
 package com.onlyas.multidata.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +11,6 @@ import java.io.Serializable;
  * @param <T>
  * @author Danny
  */
-@AllArgsConstructor
 public class OK<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 
