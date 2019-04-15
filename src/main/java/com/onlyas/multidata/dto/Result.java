@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @param <T>
  * @author Danny
  */
-public class OK<T> implements Serializable {
+public class Result<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Getter
@@ -26,28 +26,28 @@ public class OK<T> implements Serializable {
     @Setter
     private T data;
 
-    public OK() {
+    public Result() {
         super();
     }
 
-    public OK(T data) {
+    public Result(T data) {
         super();
         this.data = data;
     }
 
-    public OK(T data, String msg) {
+    public Result(T data, String msg) {
         super();
         this.data = data;
         this.msg = msg;
     }
 
-    public OK(int code, String msg) {
+    public Result(int code, String msg) {
         super();
         this.code = code;
         this.msg = msg;
     }
 
-    public OK(Throwable e) {
+    public Result(Throwable e) {
         super();
         this.msg = e.getMessage();
         this.code = 0;

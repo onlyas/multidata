@@ -1,11 +1,15 @@
 package com.onlyas.multidata.controller.one;
 
+import com.github.pagehelper.PageInfo;
+import com.onlyas.multidata.domain.one.TUsers;
+import com.onlyas.multidata.dto.Result;
 import com.onlyas.multidata.service.one.TUsersService;
-import com.onlyas.multidata.dto.OK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController
@@ -16,13 +20,13 @@ public class UsersController {
     TUsersService tUsersService;
 
     @GetMapping("/list")
-    public OK list() {
-        //return new OK(0,"找不到用户信息");
-        return new OK(tUsersService.list());
+    public Result<List<TUsers>> list() {
+        //return new Result(0,"找不到用户信息");
+        return new Result<>(tUsersService.list());
     }
 
     @GetMapping("/page")
-    public OK page() {
-        return new OK(tUsersService.page());
+    public Result<PageInfo<TUsers>> page() {
+        return new Result<>(tUsersService.page());
     }
 }
